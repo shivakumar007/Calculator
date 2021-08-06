@@ -1,7 +1,7 @@
 package com.calculator;
 
 public class StringCalculator {
-    public static int Add(String numbers){
+    public static int Add(String numbers) throws Exception{
         if(numbers.equals(" ")||numbers.equals("")) {
             return 0;
         }
@@ -29,12 +29,20 @@ public class StringCalculator {
         numbers=numbers.replaceAll("\n","");
         String[] numberList=numbers.split(seperator);
         seperator=";";
+        String negative="";
         int sum=0;
         for(int i=0;i<numberList.length;i++){
             if(Integer.parseInt(numberList[i])<1000) {
                 sum=sum+Integer.parseInt(numberList[i]);
             }
+            if(Integer.parseInt(numberList[i])<0){
+                negative=negative+numberList[i]+" ";
+            }
         }
+        if(negative.length()>0){
+            throw new Exception("negatives not allowed "+negative);
+        }
+
         return sum;
     }
 
