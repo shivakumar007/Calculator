@@ -5,7 +5,12 @@ public class StringCalculator {
         if(numbers.equals(" ")||numbers.equals("")) {
             return 0;
         }
-        return Integer.parseInt(numbers);
+        String[] numberList=numbers.split(",");
+        int sum=0;
+        for(int i=0;i<numberList.length;i++){
+            sum=sum+Integer.parseInt(numberList[i]);
+        }
+        return sum;
     }
 
 }
