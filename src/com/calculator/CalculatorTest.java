@@ -26,5 +26,9 @@ public class CalculatorTest {
         System.out.println(StringCalculator.Add("//[*][%]\n1*2%5")==8);
         System.out.println(StringCalculator.Add("//[**][%%%][&]\n3%%%4**5&6")==18);
 
+        //test for checkimg Integers are less than 1000
+        System.out.println(StringCalculator.Add("2,1001")==2);
+        System.out.println(StringCalculator.Add("//+\n3+1007")==3);
+
     }
 }

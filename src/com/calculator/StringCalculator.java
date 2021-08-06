@@ -28,9 +28,12 @@ public class StringCalculator {
 
         numbers=numbers.replaceAll("\n","");
         String[] numberList=numbers.split(seperator);
+        seperator=";";
         int sum=0;
         for(int i=0;i<numberList.length;i++){
-            sum=sum+Integer.parseInt(numberList[i]);
+            if(Integer.parseInt(numberList[i])<1000) {
+                sum=sum+Integer.parseInt(numberList[i]);
+            }
         }
         return sum;
     }
