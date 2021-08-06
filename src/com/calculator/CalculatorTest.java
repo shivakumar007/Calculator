@@ -14,5 +14,17 @@ public class CalculatorTest {
         System.out.println(StringCalculator.Add("1,2")==3);
         System.out.println(StringCalculator.Add("1,2,3,4,5")==15);
 
+        //test for single seperator
+        System.out.println(StringCalculator.Add("//;1;2")==3);
+        System.out.println(StringCalculator.Add("//%1%3")==4);
+
+        //test for long length seperators(deliminators)
+        System.out.println(StringCalculator.Add("//[***]\n1***2***3")==6);
+        System.out.println(StringCalculator.Add("//[%%]\n1%%2%%4")==7);
+
+        //test for multiple seperators
+        System.out.println(StringCalculator.Add("//[*][%]\n1*2%5")==8);
+        System.out.println(StringCalculator.Add("//[**][%%%][&]\n3%%%4**5&6")==18);
+
     }
 }
